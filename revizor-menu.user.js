@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ревизор Меню (Checker)
 // @namespace    starterapp-revizor-menu
-// @version      2.0.1
+// @version      2.0.2
 // @description  Проверка выгрузки меню по чек-листу прямо на checker.starterapp.ru — с автозахватом ответа "Menu"
 // @match        https://checker.starterapp.ru/*
 // @grant        none
@@ -346,26 +346,6 @@
       + '  <h1>Ревизор Меню</h1>'
       + '  <p class="lede">Меню подхватывается автоматически, когда на этой странице получаешь ответ «Menu». Можно и вставить/перетащить JSON вручную.</p>'
       + '</header>'
-      + '<section class="panel">'
-      + '  <div class="panel-label">'
-      + '    <span>Данные меню (JSON) <span class="capture-hint" id="captureHint"></span></span>'
-      + '    <span class="hint">Массив блюд, либо объект {"название ресторана": [...]} · можно перетащить .json файл</span>'
-      + '  </div>'
-      + '  <textarea id="input" placeholder="Заполнится само после запроса Menu на этой странице. Либо вставь JSON вручную."></textarea>'
-      + '  <input type="file" id="fileInput" accept=".json,application/json" style="display:none">'
-      + '  <div class="actions">'
-      + '    <button class="primary" id="runBtn">Проверить</button>'
-      + '    <button class="ghost" id="fileBtn">Выбрать файл</button>'
-      + '    <button class="ghost" id="clearBtn">Очистить</button>'
-      + '    <span class="hint" id="statusHint"></span>'
-      + '  </div>'
-      + '  <div class="banner" id="banner"></div>'
-      + '  <div class="project-row">'
-      + '    <label for="projectInput">Название проекта</label>'
-      + '    <input type="text" id="projectInput" placeholder="например: sushistore" autocomplete="off" spellcheck="false">'
-      + '    <span class="hint">для ссылок на карточки: project.starterapp.ru/menu/категория/код</span>'
-      + '  </div>'
-      + '</section>'
       + '<div id="results">'
       + '  <div class="stat-row" id="statRow"></div>'
       + '  <div class="workspace">'
@@ -390,7 +370,27 @@
       + '  <span>Качество и наличие фото самих блюд скрипт не проверяет.</span>'
       + '  <span>Ссылки на карточки появляются только если указано название проекта; используется первая категория блюда.</span>'
       + '  <span>Автозахват — эвристика по форме ответа (есть code/name/toppingGroups); если после «Menu» бейдж на кнопке не появился, вставь JSON вручную.</span>'
-      + '</footer>';
+      + '</footer>'
+      + '<section class="panel">'
+      + '  <div class="panel-label">'
+      + '    <span>Данные меню (JSON) <span class="capture-hint" id="captureHint"></span></span>'
+      + '    <span class="hint">Массив блюд, либо объект {"название ресторана": [...]} · можно перетащить .json файл</span>'
+      + '  </div>'
+      + '  <textarea id="input" placeholder="Заполнится само после запроса Menu на этой странице. Либо вставь JSON вручную."></textarea>'
+      + '  <input type="file" id="fileInput" accept=".json,application/json" style="display:none">'
+      + '  <div class="actions">'
+      + '    <button class="primary" id="runBtn">Проверить</button>'
+      + '    <button class="ghost" id="fileBtn">Выбрать файл</button>'
+      + '    <button class="ghost" id="clearBtn">Очистить</button>'
+      + '    <span class="hint" id="statusHint"></span>'
+      + '  </div>'
+      + '  <div class="banner" id="banner"></div>'
+      + '  <div class="project-row">'
+      + '    <label for="projectInput">Название проекта</label>'
+      + '    <input type="text" id="projectInput" placeholder="например: sushistore" autocomplete="off" spellcheck="false">'
+      + '    <span class="hint">для ссылок на карточки: project.starterapp.ru/menu/категория/код</span>'
+      + '  </div>'
+      + '</section>';
   }
 
   // ================= правила проверки =================
